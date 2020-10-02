@@ -81,10 +81,10 @@ const Chart = () => {
       <LineChart data={data}>
         <defs>
           <linearGradient id="colorUv" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#667EEA" />
-            <stop offset={colorBreakPointPercentage} stopColor="#667EEA" />
+            <stop offset="0%" stopColor="#f56565" />
             <stop offset={colorBreakPointPercentage} stopColor="#F56565" />
-            <stop offset="100%" stopColor="#F56565" />
+            <stop offset={colorBreakPointPercentage} stopColor="#667EEA" />
+            <stop offset="100%" stopColor="#667EEA" />
           </linearGradient>
         </defs>
         <XAxis
