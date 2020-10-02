@@ -12,8 +12,8 @@ import tokyo from './assets/images/tokyo.jpg';
 
 function App() {
   return (
-    <div className="flex min-h-screen">
-      <div className="flex justify-between flex-col w-1/6 bg-indigo-600 p-8">
+    <div className="flex">
+      <div className="h-screen sticky top-0 flex justify-between flex-col bg-indigo-600 p-8">
         <nav>
           <span className="font-semibold text-white text-2xl tracking-widest">
             METEOROLOG
@@ -114,14 +114,14 @@ function App() {
           </div>
         </div>
       </div>
-      <main className="w-5/6 p-10 flex flex-col">
+      <main className=" container mx-auto flex flex-col mt-8">
         <section className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">
             Weather Forecast
           </h1>
-          <div className="flex">
-            <div className="flex flex-col items-center mr-12">
-              <div className="h-48 w-64 rounded-lg relative overflow-auto">
+          <div className="flex justify-between">
+            <div className="flex flex-col items-center">
+              <div className="h-40 w-56 rounded-lg relative overflow-auto">
                 <img src={london} alt="" className="h-full " />
                 <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
                   12:31
@@ -132,8 +132,8 @@ function App() {
               </span>
             </div>
 
-            <div className="flex flex-col items-center mr-12">
-              <div className="h-48 w-64 rounded-lg relative overflow-auto">
+            <div className="flex flex-col items-center">
+              <div className="h-40 w-56 rounded-lg relative overflow-auto">
                 <img src={berlin} alt="" className="h-full " />
                 <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
                   13:31
@@ -144,8 +144,8 @@ function App() {
               </span>
             </div>
 
-            <div className="flex flex-col items-center mr-12">
-              <div className="h-48 w-64 rounded-lg relative overflow-auto">
+            <div className="flex flex-col items-center">
+              <div className="h-40 w-56 rounded-lg relative overflow-auto">
                 <img src={newyork} alt="" className="h-full " />
                 <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
                   13:31
@@ -156,8 +156,8 @@ function App() {
               </span>
             </div>
 
-            <div className="flex flex-col items-center mr-12">
-              <div className="h-48 w-64 rounded-lg relative overflow-auto">
+            <div className="flex flex-col items-center">
+              <div className="h-40 w-56 rounded-lg relative overflow-auto">
                 <img src={tokyo} alt="" className="h-full " />
                 <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
                   13:31
@@ -167,8 +167,8 @@ function App() {
                 Tokyo
               </span>
             </div>
-            <div className="flex flex-col items-center mr-12">
-              <div className="h-48 w-64 rounded-lg relative overflow-auto">
+            <div className="flex flex-col items-center">
+              <div className="h-40 w-56 rounded-lg relative overflow-auto">
                 <img src={beijing} alt="" className="h-full " />
                 <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
                   13:31
@@ -182,44 +182,39 @@ function App() {
         </section>
         <section className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">London</h1>
-          <div className="flex flex-row">
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+          <div className="flex justify-between flex-row">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiSnow className="text-6xl text-indigo-600 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiSnow className="text-6xl text-indigo-600 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiDaySunnyOvercast className="text-6xl text-orange-400 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiCloudy className="text-6xl text-indigo-600 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiDaySunnyOvercast className="text-6xl text-orange-400 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiSnow className="text-6xl text-indigo-600 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
+            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
               <WiSnow className="text-6xl text-indigo-600 mb-1" />
-              <span className="text-gray-800 text-xl font-bold">-5/+4</span>
-              <span className="text-gray-600 font-semibold">11 Mon</span>
-            </div>
-            <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10 mr-12">
-              <WiDaySunnyOvercast className="text-6xl text-orange-400 mb-1" />
               <span className="text-gray-800 text-xl font-bold">-5/+4</span>
               <span className="text-gray-600 font-semibold">11 Mon</span>
             </div>
