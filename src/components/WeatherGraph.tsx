@@ -1,7 +1,27 @@
 import React from 'react';
 import Chart from './Chart';
+import { DailyForecast } from './types';
 
-const WeatherGraph = () => {
+interface Props {
+  data: {
+    daily: DailyForecast[];
+  };
+}
+
+type ChartData = { day: string; temp: number }[];
+
+const WeatherGraph: React.FC<Props> = ({ data }) => {
+  const { daily } = data;
+  console.log(daily);
+
+  const chartData: ChartData = [];
+
+  daily.forEach((el) =>
+    chartData.push({ day: '12 mon', temp: Math.round(el.temp.max) }),
+  );
+
+  console.log(chartData);
+
   return (
     <section className="mb-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-4">Weather graph</h1>
@@ -37,7 +57,7 @@ const WeatherGraph = () => {
             </div>
           </div>
         </div>
-        <Chart />
+        <Chart data={chartData} />
       </div>
     </section>
   );

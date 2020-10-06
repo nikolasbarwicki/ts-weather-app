@@ -10,38 +10,12 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const data = [
-  {
-    day: '11 Mon',
-    temp: -6,
-  },
-  {
-    day: '12 Tue',
-    temp: -10,
-  },
-  {
-    day: '13 Wed',
-    temp: -8,
-  },
-  {
-    day: '14 Thu',
-    temp: -5,
-  },
-  {
-    day: '15 Fri',
-    temp: 3,
-  },
-  {
-    day: '16 Sat',
-    temp: 6,
-  },
-  {
-    day: '17 Sun',
-    temp: 2,
-  },
-];
+type ChartData = { day: string; temp: number }[];
+interface Props {
+  data: ChartData;
+}
 
-const Chart = () => {
+const Chart: React.FC<Props> = ({ data }) => {
   const { min, max } = data.reduce(
     (result, dataPoint) => ({
       min:
@@ -101,6 +75,7 @@ const Chart = () => {
           axisLine={false}
           tickLine={false}
           padding={{ top: 30, bottom: 30 }}
+          domain={['dataMin - 1', 'dataMax + 1']}
         />
         <CartesianGrid strokeDasharray="3 3" fill="#ffffff" strokeWidth={1} />
         <Tooltip />

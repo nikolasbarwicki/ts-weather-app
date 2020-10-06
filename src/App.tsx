@@ -107,7 +107,7 @@ function App() {
       <main className=" container mx-auto flex flex-col mt-8">
         <CitiesList />
         <WeatherForecast data={weatherData} />
-        <WeatherGraph />
+        <WeatherGraph data={weatherData} />
       </main>
     </div>
   );
