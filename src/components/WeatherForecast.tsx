@@ -1,25 +1,21 @@
 import React from 'react';
 import Icon from './Icon';
-import { DailyForecast } from './types';
+import { Daily } from './types';
 
 interface Props {
-  data: {
-    daily: DailyForecast[];
-  };
+  daily: Daily[];
 }
 
-const WeatherForecast: React.FC<Props> = ({ data }) => {
-  const { daily } = data;
-
+const WeatherForecast: React.FC<Props> = ({ daily }) => {
   return (
     <section className="mb-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-4">London</h1>
       <div className="flex justify-between flex-row">
-        {daily.map((item) => (
+        {daily.map((item: Daily) => (
           <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
-            <Icon weather={item.weather[0].main} />
+            <Icon weather={item.weather} />
             <span className="text-gray-800 text-lg font-bold">
-              {`+${item.temp.min.toFixed(0)} / +${item.temp.max.toFixed(0)}`}
+              {`+${Math.floor(item.tempMin)} / +${Math.floor(item.tempMax)}`}
             </span>
             <span className="text-gray-600 font-semibold">11 Mon</span>
           </div>

@@ -1,7 +1,12 @@
 import React from 'react';
 import SidebarWidget from './SidebarWidget';
+import { Current } from './types';
 
-const Sidebar = () => {
+interface Props {
+  current: Current;
+}
+
+const Sidebar: React.FC<Props> = ({ current }) => {
   return (
     <div className="h-screen sticky top-0 flex justify-between flex-col bg-indigo-600 p-8">
       <nav>
@@ -37,7 +42,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      <SidebarWidget />
+      <SidebarWidget current={current} />
     </div>
   );
 };

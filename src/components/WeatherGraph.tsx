@@ -1,26 +1,17 @@
 import React from 'react';
 import Chart from './Chart';
-import { DailyForecast } from './types';
+import { Daily } from './types';
 
 interface Props {
-  data: {
-    daily: DailyForecast[];
-  };
+  daily: Daily[];
 }
 
-type ChartData = { day: string; temp: number }[];
+const WeatherGraph: React.FC<Props> = ({ daily }) => {
+  const chartData: { day: string; temp: number }[] = [];
 
-const WeatherGraph: React.FC<Props> = ({ data }) => {
-  const { daily } = data;
-  console.log(daily);
-
-  const chartData: ChartData = [];
-
-  daily.forEach((el) =>
-    chartData.push({ day: '12 mon', temp: Math.round(el.temp.max) }),
+  daily.forEach((el: Daily) =>
+    chartData.push({ day: '12 mon', temp: Math.floor(el.tempMax) }),
   );
-
-  console.log(chartData);
 
   return (
     <section className="mb-8">

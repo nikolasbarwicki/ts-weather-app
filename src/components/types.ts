@@ -6,15 +6,23 @@ export type WeatherTypes =
   | 'Clear'
   | 'Clouds';
 
-export interface DailyForecast {
-  temp: {
-    min: number;
-    max: number;
-  };
-  weather: {
-    id: number;
-    main: WeatherTypes;
-    description: string;
-    icon: string;
-  }[];
+export interface Current {
+  dt: number;
+  humidity: number;
+  temp: number;
+  windSpeed: number;
+  precipitation: number;
+  weather: WeatherTypes;
+}
+
+export interface Daily {
+  dt: number;
+  tempMax: number;
+  tempMin: number;
+  weather: WeatherTypes;
+}
+
+export interface WeatherData {
+  current: Current;
+  daily: Daily[];
 }
