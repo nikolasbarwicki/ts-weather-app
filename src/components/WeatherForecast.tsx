@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Icon from './Icon';
 import { Daily } from './types';
 
@@ -17,7 +18,9 @@ const WeatherForecast: React.FC<Props> = ({ daily }) => {
             <span className="text-gray-800 text-lg font-bold">
               {`+${Math.floor(item.tempMin)} / +${Math.floor(item.tempMax)}`}
             </span>
-            <span className="text-gray-600 font-semibold">11 Mon</span>
+            <span className="text-gray-600 font-semibold">
+              {moment.unix(item.dt).format('DD ddd')}
+            </span>
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Icon from './Icon';
 import { Current } from './types';
 
@@ -16,9 +17,11 @@ const SidebarWidget: React.FC<Props> = ({ current }) => {
           </div>
           <div className="flex flex-col">
             <span className="text-2xl font-semibold">Today</span>
-            <span className="text-xl font-semibold">11:44</span>
+            <span className="text-xl font-semibold">
+              {moment.unix(current.dt).format('HH:mm')}
+            </span>
             <span className="text font-semibold text-gray-600">
-              Mon, 11 January
+              {moment.unix(current.dt).format('ddd, DD MMMM')}
             </span>
           </div>
         </div>
