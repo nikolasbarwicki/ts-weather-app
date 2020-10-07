@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Chart from './Chart';
 import { Daily } from '../types';
 
@@ -10,7 +11,10 @@ const WeatherGraph: React.FC<Props> = ({ daily }) => {
   const chartData: { day: string; temp: number }[] = [];
 
   daily.forEach((el: Daily) =>
-    chartData.push({ day: '12 mon', temp: Math.floor(el.tempMax) }),
+    chartData.push({
+      day: moment.unix(el.dt).format('DD ddd'),
+      temp: Math.floor(el.tempMax),
+    }),
   );
 
   return (

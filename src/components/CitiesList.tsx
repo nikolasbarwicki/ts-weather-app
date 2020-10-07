@@ -52,6 +52,7 @@ const CitiesList = () => {
           </div>
           <span className="text-gray-800 text-xl font-bold mt-4">Tokyo</span>
         </div>
+
         <div className="flex flex-col items-center">
           <div className="h-40 w-56 rounded-lg relative overflow-auto">
             <img src={beijing} alt="" className="h-full " />
