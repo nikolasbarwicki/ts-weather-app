@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar';
 import CitiesList from './components/CitiesList';
 import WeatherForecast from './components/WeatherForecast';
 import WeatherGraph from './components/WeatherGraph';
-import { WeatherData } from './components/types';
+import { WeatherData } from './types';
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData>({

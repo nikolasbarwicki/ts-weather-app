@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from './Chart';
-import { Daily } from './types';
+import { Daily } from '../types';
 
 interface Props {
   daily: Daily[];

@@ -7,7 +7,7 @@ import {
   WiDaySunny,
   WiCloudy,
 } from 'react-icons/wi';
-import { WeatherTypes } from './types';
+import { WeatherTypes } from '../types';
 
 interface Props {
   weather: WeatherTypes;

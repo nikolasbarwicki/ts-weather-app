@@ -1,6 +1,6 @@
 import React from 'react';
 import SidebarWidget from './SidebarWidget';
-import { Current } from './types';
+import { Current } from '../types';
 
 interface Props {
   current: Current;

@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Icon from './Icon';
-import { Current } from './types';
+import { Current } from '../types';
 
 interface Props {
   current: Current;

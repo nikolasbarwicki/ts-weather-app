@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Icon from './Icon';
-import { Daily } from './types';
+import { Daily } from '../types';
 
 interface Props {
   daily: Daily[];
