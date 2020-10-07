@@ -6,6 +6,8 @@ export type WeatherTypes =
   | 'Clear'
   | 'Clouds';
 
+export type CityList = 'London' | 'Berlin' | 'New York' | 'Tokyo' | 'Beijing';
+
 export interface Current {
   dt: number;
   humidity: number;
@@ -13,6 +15,7 @@ export interface Current {
   windSpeed: number;
   precipitation: number;
   weather: WeatherTypes;
+  city: CityList;
 }
 
 export interface Daily {

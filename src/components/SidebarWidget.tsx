@@ -30,8 +30,7 @@ const SidebarWidget: React.FC<Props> = ({ current }) => {
             {`+${Math.floor(current.temp)}`}
             &deg;C
           </span>
-          <span className="text-2xl font-semibold">London</span>
-          <span className="font-semibold  text-gray-600">United Kingdom</span>
+          <span className="text-2xl font-semibold">{current.city}</span>
           <div className="w-full my-2">
             <div>
               <div className="flex justify-between mt-3">
