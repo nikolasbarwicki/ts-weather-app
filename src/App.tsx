@@ -52,7 +52,7 @@ function App() {
         humidity: current.humidity,
         temp: current.temp,
         windSpeed: current.wind_speed,
-        precipitation: current.rain || 0,
+        precipitation: current.rain === undefined ? 0 : current.rain['1h'],
         weather: current.weather[0].main,
         city: activeCity,
       },
