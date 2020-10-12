@@ -9,6 +9,7 @@ import tokyo from '../assets/images/tokyo.jpg';
 interface Props {
   // eslint-disable-next-line no-unused-vars
   getWeather: (lat: number, lon: number, activeCity: string) => Promise<void>;
+  currentCity: string;
 }
 
 type customCityObject = {
@@ -17,8 +18,8 @@ type customCityObject = {
   city: string;
 };
 
-const CitiesList: React.FC<Props> = ({ getWeather }) => {
-  const [activeCity, setActiveCity] = useState<string>('London');
+const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
+  const [activeCity, setActiveCity] = useState<string>(currentCity);
   const [customCity, setCustomCity] = useState<customCityObject>({
     lat: 0,
     lng: 0,

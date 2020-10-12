@@ -74,8 +74,14 @@ function App() {
         <main className=" container mx-auto flex flex-col mt-8">
           <Switch>
             <Route exact path="/">
-              <CitiesList getWeather={getWeather} />
-              <WeatherForecast daily={weatherData.daily} />
+              <CitiesList
+                getWeather={getWeather}
+                currentCity={weatherData.current.city}
+              />
+              <WeatherForecast
+                daily={weatherData.daily}
+                currentCity={weatherData.current.city}
+              />
               <WeatherGraph daily={weatherData.daily} />
             </Route>
             <Route exact path="/settings">

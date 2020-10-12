@@ -5,12 +5,13 @@ import { Daily } from '../types';
 
 interface Props {
   daily: Daily[];
+  currentCity: string;
 }
 
-const WeatherForecast: React.FC<Props> = ({ daily }) => {
+const WeatherForecast: React.FC<Props> = ({ daily, currentCity }) => {
   return (
     <section className="mb-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-4">London</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">{currentCity}</h1>
       <div className="flex justify-between flex-row">
         {daily.map((item: Daily) => (
           <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
