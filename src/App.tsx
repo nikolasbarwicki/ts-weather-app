@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './styles/main.css';
 
@@ -66,12 +67,22 @@ function App() {
 
   return (
     <div className="flex">
-      <Sidebar current={weatherData.current} />
-      <main className=" container mx-auto flex flex-col mt-8">
-        <CitiesList getWeather={getWeather} />
-        <WeatherForecast daily={weatherData.daily} />
-        <WeatherGraph daily={weatherData.daily} />
-      </main>
+      <Router>
+        <Sidebar current={weatherData.current} />
+
+        <main className=" container mx-auto flex flex-col mt-8">
+          <Switch>
+            <Route exact path="/">
+              <CitiesList getWeather={getWeather} />
+              <WeatherForecast daily={weatherData.daily} />
+              <WeatherGraph daily={weatherData.daily} />
+            </Route>
+            <Route exact path="/settings">
+              <h2>test</h2>
+            </Route>
+          </Switch>
+        </main>
+      </Router>
     </div>
   );
 }
