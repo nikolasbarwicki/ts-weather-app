@@ -51,14 +51,14 @@ const SidebarWidget: React.FC<Props> = ({ current }) => {
                   Precipitation:
                 </span>
                 <span className="font-semibold">
-                  {`${current.precipitation * 100}%`}
+                  {`${Math.floor(current.precipitation)}%`}
                 </span>
               </div>
               <div className="h-1 relative max-w-xl rounded-full overflow-hidden mt-1">
                 <div className="w-full h-full bg-gray-200 absolute" />
                 <div
                   className="h-full bg-orange-400 absolute"
-                  style={{ width: `${current.precipitation * 100}%` }}
+                  style={{ width: `${Math.floor(current.precipitation)}%` }}
                 />
               </div>
             </div>
