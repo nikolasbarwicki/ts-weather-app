@@ -9,7 +9,7 @@ import CitiesList from './components/CitiesList';
 import WeatherForecast from './components/WeatherForecast';
 import WeatherGraph from './components/WeatherGraph';
 import Settings from './components/Settings';
-import { WeatherData, CityList } from './types';
+import { WeatherData } from './types';
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData>({
@@ -32,7 +32,7 @@ function App() {
     ],
   });
 
-  const getWeather = async (lat: number, lon: number, activeCity: CityList) => {
+  const getWeather = async (lat: number, lon: number, activeCity: string) => {
     const res = await axios.get(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=9b50d0883faabc0bbbbd08bdaf9c1f57&units=metric`,
     );
@@ -79,7 +79,7 @@ function App() {
               <WeatherGraph daily={weatherData.daily} />
             </Route>
             <Route exact path="/settings">
-              <Settings />
+              <Settings getWeather={getWeather} />
             </Route>
           </Switch>
         </main>

@@ -1,19 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import beijing from '../assets/images/beijing.jpg';
 import berlin from '../assets/images/berlin.jpg';
 import london from '../assets/images/london.jpg';
 import newyork from '../assets/images/newyork.jpg';
 import tokyo from '../assets/images/tokyo.jpg';
-import { CityList } from '../types';
 
 interface Props {
   // eslint-disable-next-line no-unused-vars
-  getWeather: (lat: number, lon: number, activeCity: CityList) => Promise<void>;
+  getWeather: (lat: number, lon: number, activeCity: string) => Promise<void>;
 }
 
+type customCityObject = {
+  lat: number;
+  lng: number;
+  city: string;
+};
+
 const CitiesList: React.FC<Props> = ({ getWeather }) => {
-  const [activeCity, setActiveCity] = useState<CityList>('London');
+  const [activeCity, setActiveCity] = useState<string>('London');
+  const [customCity, setCustomCity] = useState<customCityObject>({
+    lat: 0,
+    lng: 0,
+    city: 'Add your city',
+  });
+
+  useEffect(() => {
+    const localObject = localStorage.getItem('customCity')
+      ? JSON.parse(localStorage.getItem('customCity') || '')
+      : {
+          lat: 0,
+          lng: 0,
+          city: 'Add your city',
+        };
+
+    setCustomCity(localObject);
+  }, []);
+
+  const { city, lat, lng } = customCity;
 
   return (
     <section className="mb-8">
@@ -113,28 +137,53 @@ const CitiesList: React.FC<Props> = ({ getWeather }) => {
           </span>
         </button>
 
-        <button
-          className="flex flex-col items-center focus:outline-none"
-          onClick={() => {
-            getWeather(39.9, 116.3, 'Beijing');
-            setActiveCity('Beijing');
-          }}
-          type="button"
-        >
-          <div className="h-40 w-56 rounded-lg relative overflow-auto">
-            <img src={beijing} alt="" className="h-full " />
-            <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-              13:31
-            </div>
-          </div>
-          <span
-            className={`${
-              activeCity === 'Beijing' ? 'text-indigo-600' : 'text-gray-800'
-            } text-xl font-bold mt-4`}
+        {city === 'Add your city' ? (
+          <Link
+            className="flex flex-col items-center focus:outline-none"
+            to="/settings"
           >
-            Beijing
-          </span>
-        </button>
+            <div className="h-40 w-56 rounded-lg relative overflow-auto">
+              <div className="h-full bg-gray-200 flex flex-col content-center justify-center" />
+              <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
+                13:31
+              </div>
+            </div>
+            <span
+              className={`${
+                activeCity === city ? 'text-indigo-600' : 'text-gray-800'
+              } text-xl font-bold mt-4`}
+            >
+              {city}
+            </span>
+          </Link>
+        ) : (
+          <button
+            className="flex flex-col items-center focus:outline-none"
+            onClick={() => {
+              getWeather(lat, lng, city);
+              setActiveCity(city);
+            }}
+            type="button"
+          >
+            <div className="h-40 w-56 rounded-lg relative overflow-auto">
+              <div className="h-full bg-gray-200 flex flex-col content-center justify-center">
+                <span className="text-gray-600 font-semibold">
+                  User&apos;s city
+                </span>
+              </div>
+              <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
+                13:31
+              </div>
+            </div>
+            <span
+              className={`${
+                activeCity === city ? 'text-indigo-600' : 'text-gray-800'
+              } text-xl font-bold mt-4`}
+            >
+              {city}
+            </span>
+          </button>
+        )}
       </div>
     </section>
   );

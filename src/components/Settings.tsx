@@ -7,7 +7,12 @@ type cityCoords = {
   lng: number;
 };
 
-const Settings: React.FC = () => {
+interface Props {
+  // eslint-disable-next-line no-unused-vars
+  getWeather: (lat: number, lon: number, activeCity: string) => Promise<void>;
+}
+
+const Settings: React.FC<Props> = ({ getWeather }) => {
   const [customCity, setCustomCity] = useState<cityType>('');
   const [customCityCoords, setCustomCityCoords] = useState<cityCoords>({
     lat: 0,
@@ -28,7 +33,7 @@ const Settings: React.FC = () => {
   return (
     <>
       <h1 className="text-3xl font-bold text-gray-800 mb-4">Add your city</h1>
-      <form className="w-full max-w-sm">
+      <form className="w-full max-w-xl">
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
             <label
@@ -95,14 +100,46 @@ const Settings: React.FC = () => {
 
         <div className="md:flex md:items-center">
           <div className="md:w-1/3" />
-          <div className="md:w-2/3">
+          <div className="md:w-1/3 mr-2">
             <button
-              className="shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              className="shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-full"
               type="button"
               onClick={() => getCityCoordinates()}
             >
               Get coordinates
             </button>
+          </div>
+          <div className="md:w-1/3 ml-2">
+            {customCityCoords.lat !== 0 ? (
+              <button
+                className="shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-full"
+                type="button"
+                onClick={() => {
+                  getWeather(
+                    customCityCoords.lat,
+                    customCityCoords.lng,
+                    customCity,
+                  );
+                  localStorage.setItem(
+                    'customCity',
+                    JSON.stringify({
+                      lat: customCityCoords.lat,
+                      lng: customCityCoords.lng,
+                      city: customCity,
+                    }),
+                  );
+                }}
+              >
+                Set city
+              </button>
+            ) : (
+              <button
+                className="shadow bg-indigo-500 opacity-50 cursor-not-allowed text-white font-bold py-2 px-4 rounded w-full items-end"
+                type="button"
+              >
+                Set city
+              </button>
+            )}
           </div>
         </div>
       </form>
