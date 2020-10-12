@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import CitiesList from './components/CitiesList';
 import WeatherForecast from './components/WeatherForecast';
 import WeatherGraph from './components/WeatherGraph';
+import Settings from './components/Settings';
 import { WeatherData, CityList } from './types';
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
               <WeatherGraph daily={weatherData.daily} />
             </Route>
             <Route exact path="/settings">
-              <h2>test</h2>
+              <Settings />
             </Route>
           </Switch>
         </main>
