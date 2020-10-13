@@ -1,6 +1,6 @@
 # Weather App
 
-React app made to practice Typescirpt and writing tests in a real life project.
+React app made to practice Typescirpt, TailwindCSS and writing tests in a real life project.
 
 ### Live demo
 
@@ -18,10 +18,10 @@ Typical weather app using two APIs for weather forecast and forward geocoding. L
 
 - [React.js](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 - [OpenCageData](https://opencagedata.com/api)
 - [OpenWeatherMap](https://openweathermap.org/api)
 - [Recharts](https://recharts.org/)
-- [styled-components](https://styled-components.com/)
 - [moment.js](https://momentjs.com/)
 - [react-router](https://github.com/ReactTraining/react-router)
 - [ESLint](https://eslint.org/), [Husky](https://www.npmjs.com/package/husky), [Prettier](https://prettier.io/), [lint-staged](https://github.com/okonet/lint-staged)
