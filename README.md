@@ -1,44 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather App
 
-## Available Scripts
+React app made to practise Typescirpt and writing tests in real life project.
 
-In the project directory, you can run:
+### Live demo
 
-### `npm start`
+[![Netlify Status](https://api.netlify.com/api/v1/badges/60885e93-7ad1-4aa6-a915-052891309780/deploy-status)](https://sleepy-northcutt-da1dcb.netlify.app/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">
+  <img width="550" src="https://i.ibb.co/dg4CnvW/weatherapp.png">
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 📝General info
 
-### `npm test`
+Typical weather app using two APIs for weather forecast and forward geocoding. Local storage enables saving user's city.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️Built with
 
-### `npm run build`
+- [React.js](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [OpenCageData](https://opencagedata.com/api)
+- [OpenWeatherMap](https://openweathermap.org/api)
+- [Recharts](https://recharts.org/)
+- [styled-components](https://styled-components.com/)
+- [moment.js](https://momentjs.com/)
+- [react-router](https://github.com/ReactTraining/react-router)
+- [ESLint](https://eslint.org/), [Husky](https://www.npmjs.com/package/husky), [Prettier](https://prettier.io/), [lint-staged](https://github.com/okonet/lint-staged)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀Setup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To clone and run this application, you'll need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com/)) installed on your computer. From your command line:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    $ git clone https://github.com/nikolasbarwicki/ts-weather-app
+    $ cd ts-weather-app
+    $ npm install
 
-### `npm run eject`
+Start app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    $ npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Go to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+      http://localhost:3000
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ✅Features
 
-## Learn More
+A few of the things you can do with Weather App:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Get current weather for 4 different cities with forecast for next 7 days
+- Get current weather for city defined by user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## To-do:
+
+- [ ] Write tests using Jest + React Testing Library
+- [ ] Add resposivity to the UI
+
+## 👁‍🗨Project status
+
+This project is currently in development - find out more in [To-do](#to-do) section.
+
+## 📘License
+
+This project is licensed under the MIT License © [Nikolas Barwicki](https://github.com/nikolasbarwicki)
