@@ -1,6 +1,6 @@
 # Weather App
 
-React app made to practise Typescirpt and writing tests in real life project.
+React app made to practice Typescirpt and writing tests in a real life project.
 
 ### Live demo
 
