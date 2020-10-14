@@ -14,7 +14,10 @@ const WeatherForecast: React.FC<Props> = ({ daily, currentCity }) => {
       <h1 className="text-3xl font-bold text-gray-800 mb-4">{currentCity}</h1>
       <div className="flex justify-between flex-row">
         {daily.map((item: Daily) => (
-          <div className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10">
+          <div
+            key={item.dt}
+            className="flex flex-col items-center bg-gray-200 rounded-lg py-8 px-10"
+          >
             <Icon weather={item.weather} />
             <span className="text-gray-800 text-lg font-bold">
               {`+${Math.floor(item.tempMin)} / +${Math.floor(item.tempMax)}`}

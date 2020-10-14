@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -20,8 +21,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-use-before-define': [0],
+    '@typescript-eslint/no-use-before-define': [1],
     'import/extensions': [
       'error',
       'ignorePackages',
