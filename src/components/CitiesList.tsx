@@ -56,9 +56,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
         >
           <div className="h-40 w-56 rounded-lg relative overflow-auto">
             <img src={london} alt="" className="h-full " />
-            <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-              12:31
-            </div>
           </div>
           <span
             className={`${
@@ -79,9 +76,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
         >
           <div className="h-40 w-56 rounded-lg relative overflow-auto">
             <img src={berlin} alt="" className="h-full " />
-            <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-              13:31
-            </div>
           </div>
           <span
             className={`${
@@ -102,9 +96,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
         >
           <div className="h-40 w-56 rounded-lg relative overflow-auto">
             <img src={newyork} alt="" className="h-full " />
-            <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-              13:31
-            </div>
           </div>
           <span
             className={`${
@@ -125,9 +116,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
         >
           <div className="h-40 w-56 rounded-lg relative overflow-auto">
             <img src={tokyo} alt="" className="h-full " />
-            <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-              13:31
-            </div>
           </div>
           <span
             className={`${
@@ -145,9 +133,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
           >
             <div className="h-40 w-56 rounded-lg relative overflow-auto">
               <div className="h-full bg-gray-200 flex flex-col content-center justify-center" />
-              <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-                13:31
-              </div>
             </div>
             <span
               className={`${
@@ -171,9 +156,6 @@ const CitiesList: React.FC<Props> = ({ getWeather, currentCity }) => {
                 <span className="text-gray-600 font-semibold">
                   User&apos;s city
                 </span>
-              </div>
-              <div className="bg-white text-gray-800 font-bold py-2 px-4 right-0 bottom-0 absolute rounded-tl-lg">
-                13:31
               </div>
             </div>
             <span
